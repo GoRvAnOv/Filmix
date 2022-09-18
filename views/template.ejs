@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <title>Template</title>
+</head>
+<body>
+    <header class="header">
+        <%- include('partials/header.ejs') %> 
+    </header>
+    <section class="about_film">
+        <div class="poster">
+             <img src='<%= item.urlFoto %>' style="width: 170px; height: 250px;">
+        </div>
+       <div class="info">
+        <div class="info-title">
+            <h1 class="title"><%= item.name %> </h1>
+            <h1>(<%= item.year %>)</h1>
+        </div>
+        <div class="description">
+            <%= item.description %> 
+        </div>
+        <ul class="info-list">
+           <li>Рейтинг: <%= item.rate %> </li>
+           <li>Країна: <%= item.country %> </li>
+           <li>Режиссер: <%= item.director %> </li>
+           <li>Жанр: <%= item.genre %> </li>
+           <li>Якість: <%= item.quality %> </li>
+           <li>Озвучка: <%= item.voice %> </li>
+           <li>Рік: <%= item.year %> </li>
+           <li>Актори: <%= item.actors %> </li>
+        </ul>
+        <br>
+       <div class="info-line"><p>Дивитись онлайн <%= item.name %> в хорошій якості</p></div>
+       </div>
+       
+    </section>
+    <div class="video">
+        <video width="1100px" src="<%= item.urlVideo %>" controls></video>
+    </div>
+    <div class="write_comments">
+        <span class="comm_title">Коментарі</span>
+        <form action="/films/<%= item._id %>" method="post" enctype="multipart/form-data">
+            <div class="comm_input">
+                <textarea name="comments" id="" cols="100" rows="2"></textarea>
+            </div>
+            <div class="comm_input">
+                <input class="user_input" type="text" name="username">
+            </div>
+           <input class="comm_submit" type="submit" value="Надіслати">
+        </form>
+    </div>
+    <div class="comments">
+        <% item.comments.forEach((data) =>{ %> 
+            <div><%= data.comment %> </div>
+            <div><%= data.username %> </div>
+        <%})%>
+    </div>
+    <br>
+</body>
+</html>

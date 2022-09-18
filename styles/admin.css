@@ -1,0 +1,21 @@
+.container{
+    padding-top: 100px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.form{
+    font-size: 20px;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: yellow;
+}
+.item{
+    width: 300px;
+    height: 25px;
+    display: block;
+    margin: auto;
+    font-size: 20px;
+}

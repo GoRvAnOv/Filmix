@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <title>Admin-panel</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="/admin-pan" method="POST" enctype="multipart/form-data" onsubmit="Submit()">
+            <label class="item" for="name">Назва</label>
+            <input  class="item" type="text" name="name" value="Superman">
+            <label  class="item" for="year">Рік</label>
+            <input  class="item" type="number" name= "year" value="2010">
+            <label  class="item" for="director">Режисер</label>
+            <input  class="item" type="text" name="director" value="Zak Snider">
+            <label  class="item" for="country">Країна</label>
+            <input  class="item" type="text" name="country" value="Ukraine">
+            <label  class="item" for="actors">Актори</label>
+            <input  class="item" type="text" name="actors" value="Jason Statham">
+            <label  class="item" for="genre">Жанр</label>
+            <input  class="item" type="text" name="genre" value="Fantasy">
+            <label  class="item" for="quality">Якість</label>
+            <input  class="item" type="text" name="quality" value="1000">
+            <label  class="item" for="voice">Озвучка</label>
+            <input  class="item" type="text" name="voice" value="Coldfilm">
+            <label  class="item" for="type">Тип</label>
+            <select class="item" name = "type">
+                <option value="Film">Film</option>
+                <option value="Serial">Serial</option>
+                <option value="Cartoon">Cartoon</option>
+                <option value="Anime">Anime</option>
+            </select>
+            <label  class="item" for="description">Опис</label>
+            <input  class="item" type="text" name="description" value="qwert qwerty" >
+            <label  class="item" for="video">Відео</label>
+            <input  class="item" type="file" name= "video">
+            <label  class="item" for="foto">Постер</label>
+            <input  class="item" type="file" name="foto">
+            <input  class="item" type="submit">
+        </form>
+    </div>
+        </div>
+       
+    <script>
+        function Submit(){
+            alert("OK");
+            
+        }
+    </script>
+</body>
+</html>

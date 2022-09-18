@@ -1,0 +1,162 @@
+body{
+    max-width: 1100px;
+    margin: auto;
+    background-color: rgb(16, 15, 15);
+}
+h1{
+    margin: 0;
+}
+a{
+    color: black;
+}
+.header{
+    margin-top: 200px;
+    margin-bottom: 20px;
+    background-color: rgb(191, 200, 16);
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    margin-left: 15px;
+    font-size: 25px;
+}
+.navbar{
+    justify-content: center;
+    align-items: center;
+}
+.navbar>ul{
+    list-style: none;
+    display: inline-flex;
+}
+
+.nav-list li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-right: 30px;
+}
+.input-search{
+    text-decoration-color: aliceblue;
+    padding: 8px 20px;
+    background-color: black;
+    color: aliceblue;
+}
+.search{
+    margin-right: 40px;
+    padding: 7px 15px;
+}
+.sign-in{
+    padding: 7px 20px;
+}
+.search, .sign-in{
+    border: none;
+    background-color: rgb(238, 177, 64);
+    font-weight: 700;   
+    font-size: 16px;
+}
+.films-btn{
+    background-color: rgb(238, 177, 64);
+    border: none;
+    padding: 10px 25px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.sorting{
+    padding: 20px 0px;
+}
+.sorting-btn{
+    padding: 10px 25px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: aliceblue;
+}
+.sorting-btn:hover{
+    background-color: rgb(57, 57, 63);
+    border-radius: 5px;
+}
+
+/*************FILMS*************/
+
+.item{
+    position: relative;
+    text-align: center;
+    height: 250px;
+    width: 170px;
+    background-color: blue;
+    margin-bottom: 15px;
+}
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.title{
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    bottom: 5%;
+    color: white;
+}
+
+/*-----------TEMPLATE-----------*/
+
+.about_film{
+    font-size: 20px;
+    color: white;
+    padding-top: 200px;
+    display: flex;
+}
+.info-title{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.title{
+   margin-right: 10px;
+}
+.poster{
+    width: 170px;
+    padding: 0 20px;
+}
+.info-list{
+    list-style: none;
+    padding: 0;
+}
+.info-list>li{
+    padding-bottom: 15px;
+}
+.info-line{
+    font-size: 25px;
+    font-weight: bold;
+}
+.video{
+    max-width: 1100px;
+}
+.comm_title{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.comm_input{
+    margin-top: 20px;
+    max-width: 750px;
+    padding: 20px;
+    background-color: rgb(47 45 45);
+}
+.user_input{
+    width:746px ;
+    height: 25px;
+}
+.comm_submit{
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: brown;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

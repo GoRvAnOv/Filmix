@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmix</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <header class="header">
+        <%- include('partials/header.ejs') %> 
+    </header>
+    <section class="main-content">
+        <div class="sorting">
+            <a href="films" class="films-btn" id="sort-film">Фільми</a>
+            <a href="" class="sorting-btn">Останні</a>
+            <a href="" class="sorting-btn">Популярні</a>
+            <a href="/?sort=1" class="sorting-btn">По рейтингу</a>
+        </div>
+            <div class="movies">    
+                <%films.forEach((item) =>{ %>
+                    <a href="films/<%= item._id %>">
+                        <div class="item">
+                            <img src='<%= item.urlFoto %> ' alt="нема" style="width: 170px; height: 250px;">
+                            <h3 class="title"><%= item.name %> (<%= item.year %>) </h3>
+                        </div>
+                    </a>
+                <%})%>
+                </div>
+    </section>
+    <section class="main-content">
+        <div class="sorting">
+            <a href="films" class="films-btn">Мультфільми</a>
+            <a href="" class="sorting-btn">Останні</a>
+            <a href="" class="sorting-btn">Популярні</a>
+            <a href="/?sort=1" class="sorting-btn">По рейтингу</a>
+        </div>
+            <div class="movies">    
+                <%films.forEach((item) =>{ %>
+                    <% if (item.type == 'Serial') {%> 
+                    <div class="item">
+                        <img src='<%= item.urlFoto %> ' alt="нема" style="width: 170px; height: 250px;">
+                        <h3 class="title"><%= item.name %> (<%= item.year %>) </h3>
+                    </div>
+                    <% } %> 
+                <%})%>
+                </div>
+    </section>
+    <section class="main-content">
+        <div class="sorting">
+            <a href="films" class="films-btn">Серіали</a>
+            <a href="" class="sorting-btn">Останні</a>
+            <a href="" class="sorting-btn">Популярні</a>
+            <a href="/?sort=1" class="sorting-btn">По рейтингу</a>
+        </div>
+            <div class="movies">    
+                <%films.forEach((item) =>{ %>
+                    <% if (item.type == 'Cartoon') {%> 
+                    <div class="item">
+                        <img src='<%= item.urlFoto %> ' alt="нема" style="width: 170px; height: 250px;">
+                        <h3 class="title"><%= item.name %> (<%= item.year %>) </h3>
+                    </div>
+                    <% } %> 
+                <%})%>
+                </div>
+    </section>
+    <button style="width: 200px; height: 100px;" id="delete"></button>
+    <ejs-scripts src="./script.js"></ejs-scripts>
+    <script>
+          var deflete = document.getElementById('delete');
+        deflete.addEventListener('click', () =>{
+            fetch('/', {
+            method: 'POST', // Method itself
+            headers: {
+            'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
+            //"Accept": "application/json"
+            }
+        })
+        .then(res => res.json()) // or res.json()
+        .then(res => console.log(res))
+        })
+        var sorting = document.getElementById('sort-film');
+        sorting.addEventListener("mouseover", ()=>{
+            alert('qwer');
+        })
+        /*var deflete = document.getElementById('delete');
+        deflete.addEventListener('click', () =>{
+            fetch('/films/62ea3bbea1a72a49f496c4e9', {
+        method: 'DELETE', // Method itself
+        headers: {
+        //'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
+        "Accept": "application/json"
+        }
+        })
+        .then(res => res.json()) // or res.json()
+        .then(res => console.log(res))
+        })*/
+    </script>
+   
+</body>
+</html>
