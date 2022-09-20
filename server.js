@@ -6,10 +6,9 @@ const app = express();
 const Film = require('./models/FILM');
 const FILM = require('./models/FILM');
 var methodOverride = require('method-override');
-const {sendFilms} = require('./controllers/post-controller');
-const {FindById} = require('./controllers/post-controller');
+const env = require('env2')('./config/env.json');
 const filmRoutes = require('./routes/film-routes');
-const PORT = 3000;
+//const PORT = 3000;
 
 app.use(methodOverride('X-HTTP-Method-Override')); //middlware for put, delete methods
 app.use(express.static('styles'));
@@ -20,12 +19,12 @@ app.set('view engine', 'ejs');
 
 
 mongoose
-    .connect('mongodb+srv://gorvanov:Filmix2022@cluster0.msg1kpv.mongodb.net/Filmix?retryWrites=true&w=majority')
+    .connect(`mongodb+srv://${process.env.user}:${process.env.password}@cluster0.msg1kpv.mongodb.net/Filmix?retryWrites=true&w=majority`)
     .then((res) => console.log('Connected to db'))
     .catch((error) => console.log(error));
 
 app.use(filmRoutes);
 
-app.listen(PORT, () =>{
+app.listen(process.env.PORT, () =>{
     console.log('success')
 })
