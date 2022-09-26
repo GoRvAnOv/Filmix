@@ -36,6 +36,14 @@ a{
     font-size: 20px;
     margin-right: 30px;
 }
+
+.hidden-menu{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: brown;
+    z-index: 1111;
+}
 .input-search{
     text-decoration-color: aliceblue;
     padding: 8px 20px;

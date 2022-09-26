@@ -7,13 +7,10 @@
     <link rel="stylesheet" type="text/css" href="admin.css">
     <title>Admin-panel</title>
 </head>
-<style>
-    
-</style>
 <body>
     <div class="container">
         <div class="form">
-            <form action="/admin-pan" method="POST" enctype="multipart/form-data" onsubmit="Submit()">
+            <form action="/admin-panel" method="POST" enctype="multipart/form-data" onsubmit="Submit()">
             <label class="item" for="name">Назва</label>
             <input  class="item" type="text" name="name" value="Superman">
             <label  class="item" for="year">Рік</label>
@@ -25,7 +22,77 @@
             <label  class="item" for="actors">Актори</label>
             <input  class="item" type="text" name="actors" value="Jason Statham">
             <label  class="item" for="genre">Жанр</label>
-            <input  class="item" type="text" name="genre" value="Fantasy">
+            <div class="genres" id = "genres">
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="biographical" value="biographical">
+                    <label for="biographical">Біографічні</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="combats" value="combats">
+                    <label for="combats">Боєвики</label>
+                </div><div>
+                    <input type="checkbox" id="genre_of_film" name="vestern" value="vestern">
+                    <label for="vestern">Вестерни</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="detectives" value="detectives">
+                    <label for="detectives">Детективи</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="for_kids" value="for_kids">
+                    <label for="for_kids">Дитячі</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="documentary" value="documentary">
+                    <label for="documentary">Документальні</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="dramas" value="dramas">
+                    <label for="dramas">Драми</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="historical" value="historical">
+                    <label for="historical">Історичні</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="comedy" value="comedy">
+                    <label for="comedy">Комедії</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="criminal" value="criminal">
+                    <label for="criminal">Кримінал</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="melodramas" value="melodramas">
+                    <label for="melodramas" >Мелодрами</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="musical" value="musical">
+                    <label for="musical">Музичні</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="advantures" value="advantures">
+                    <label for="advantures">Пригоди</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="for_family" value="for_family">
+                    <label for="for_family">Сімейні</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="sport" value="sport">
+                    <label for="sport">Спортивні</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="horror" value="horror">
+                    <label for="horror">Жахи</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="genre_of_film" name="fantasy" value="fantasy">
+                    <label for="fantasy">Фантастика</label>
+                </div>
+                
+            </div>
+            <!--<input  class="item" type="text" name="genre" value="Fantasy">-->
             <label  class="item" for="quality">Якість</label>
             <input  class="item" type="text" name="quality" value="1000">
             <label  class="item" for="voice">Озвучка</label>
@@ -44,15 +111,32 @@
             <label  class="item" for="foto">Постер</label>
             <input  class="item" type="file" name="foto">
             <input  class="item" type="submit">
+            
         </form>
+        <button id ='but'></button>
     </div>
         </div>
        
+       
     <script>
-        function Submit(){
-            alert("OK");
+        let mass = [];
+        let but = document.getElementById('but');
+        but.addEventListener('click', ()=>{
+           
+            //let inputs = document.getElementsByTagName('input > div.genres');
+            let inputs = document.getElementById('genres').getElementsByTagName('input');
+         
+       // console.log(inputs[0].defaultValue);
+        for(var i = 0; i<=inputs.length;i++){
+            if(inputs[i].checked){
+                console.log(inputs[i])
+                mass.push(inputs[i].value);
+            }
             
         }
+            console.log(mass);
+        })
+        
     </script>
 </body>
 </html>

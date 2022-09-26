@@ -87,7 +87,7 @@ router.get('/admin-panel', (req, res) => {
 router.post('/admin-panel', (req, res) => {
     try{
         const { name, year, director, country, actors, genre, quality, voice, description, type } = req.body;
-
+        console.log(req.body);
         /*if (!req.files) {
             return res.status(400).send("No files were uploaded.");
         }*/

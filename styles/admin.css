@@ -19,3 +19,10 @@
     margin: auto;
     font-size: 20px;
 }
+
+.genres{
+    flex-direction: column;
+    display: flex;
+    height: 220px;
+    flex-wrap: wrap;
+}
