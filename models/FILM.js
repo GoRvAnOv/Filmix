@@ -22,8 +22,8 @@ const FilmSchema = new Schema({
         type: String,
         required: true
     },
-    genre: {
-        type: String,
+    checked: {
+        type: Array,
         required: true
     },
     quality: {

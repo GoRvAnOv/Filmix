@@ -3,6 +3,8 @@ const FILM = require('../models/FILM');
 const Film = require('../models/FILM');
 const path = require('path');
 const router = express.Router();
+const axios = require('axios').default;
+
 //const createPath = (page) => path.resolve(__dirname, './views', `${page}.ejs`);
 
 router.get("/", (req, res) => {
@@ -86,8 +88,11 @@ router.get('/admin-panel', (req, res) => {
 })
 router.post('/admin-panel', (req, res) => {
     try{
-        const { name, year, director, country, actors, genre, quality, voice, description, type } = req.body;
+        const { name, year, director, country, actors, checked_inputs, quality, voice, description, type } = req.body;
+        let checked = checked_inputs.split(',')
         console.log(req.body);
+        console.log(checked)
+        console.log(Array.isArray(checked))
         /*if (!req.files) {
             return res.status(400).send("No files were uploaded.");
         }*/
@@ -100,12 +105,13 @@ router.post('/admin-panel', (req, res) => {
         let rate = 0;
         let comment = [];
         const dateAdded = new Date();
-        const film = new Film({ name, year, director, country, actors, genre, quality, voice, description, type, rate, urlVideo, urlFoto, dateAdded, comment});
+        const film = new Film({ name, year, director, country, actors, checked, quality, voice, description, type, rate, urlVideo, urlFoto, dateAdded, comment});
         film
             .save();
         /*if(!res.status(400)){
             alert('error');
         }*/
+       
     }
 
     catch(err){

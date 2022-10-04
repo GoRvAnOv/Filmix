@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="form">
-            <form action="/admin-panel" method="POST" enctype="multipart/form-data" onsubmit="Submit()">
+            <form  action="/admin-panel" id = "form" method="POST" enctype="multipart/form-data">
             <label class="item" for="name">Назва</label>
             <input  class="item" type="text" name="name" value="Superman">
             <label  class="item" for="year">Рік</label>
@@ -119,24 +119,31 @@
        
        
     <script>
+       
+        let form = document.querySelector('form');
+        form.addEventListener('submit', (e) =>{ 
+        e.preventDefault();
         let mass = [];
-        let but = document.getElementById('but');
-        but.addEventListener('click', ()=>{
-           
-            //let inputs = document.getElementsByTagName('input > div.genres');
-            let inputs = document.getElementById('genres').getElementsByTagName('input');
-         
-       // console.log(inputs[0].defaultValue);
-        for(var i = 0; i<=inputs.length;i++){
+        let inputs = document.getElementById('genres').getElementsByTagName('input');
+        for(var i = 0; i<inputs.length;i++){
             if(inputs[i].checked){
-                console.log(inputs[i])
                 mass.push(inputs[i].value);
-            }
-            
+            }  
         }
-            console.log(mass);
+        console.table(mass)
+        async function sendData(item) {
+        const data = new FormData(form)
+
+        data.append('checked_inputs', item);
+    
+        return await fetch('/admin-panel', {
+            method: 'POST',
+            body: data
         })
-        
+    }
+    sendData(mass);
+    })
+
     </script>
 </body>
 </html>
