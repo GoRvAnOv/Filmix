@@ -18,7 +18,8 @@
             <label  class="item" for="director">Режисер</label>
             <input  class="item" type="text" name="director" value="Zak Snider">
             <label  class="item" for="country">Країна</label>
-            <input  class="item" type="text" name="country" value="Ukraine">
+            <input  class="item" id="some" type="text" name="country" value="Ukraine">
+            <button id="add">+++++</button>
             <label  class="item" for="actors">Актори</label>
             <input  class="item" type="text" name="actors" value="Jason Statham">
             <label  class="item" for="genre">Жанр</label>
@@ -116,33 +117,12 @@
         <button id ='but'></button>
     </div>
         </div>
-       
+        
+    <script src="../scripts/FormData.js"></script>       
        
     <script>
        
-        let form = document.querySelector('form');
-        form.addEventListener('submit', (e) =>{ 
-        e.preventDefault();
-        let mass = [];
-        let inputs = document.getElementById('genres').getElementsByTagName('input');
-        for(var i = 0; i<inputs.length;i++){
-            if(inputs[i].checked){
-                mass.push(inputs[i].value);
-            }  
-        }
-        console.table(mass)
-        async function sendData(item) {
-        const data = new FormData(form)
-
-        data.append('checked_inputs', item);
-    
-        return await fetch('/admin-panel', {
-            method: 'POST',
-            body: data
-        })
-    }
-    sendData(mass);
-    })
+        
 
     </script>
 </body>

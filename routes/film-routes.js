@@ -19,8 +19,12 @@ router.get("/", (req, res) => {
         .limit(6)
         .then((films) => res.render("index.ejs", { films }));
     }
+   // res.sendFile(path.join(__dirname, '..', '/views/scrt.js'));
   });
-
+//sending scripts
+router.get('/scripts/:id', (req, res) =>{
+    res.sendFile(path.join(__dirname, '..', `/scripts/FormData.js`))
+})
 // sending images
 router.get('/files/posters/:id', (req, res) =>{
     const id = req.params.id;
@@ -91,8 +95,6 @@ router.post('/admin-panel', (req, res) => {
         const { name, year, director, country, actors, checked_inputs, quality, voice, description, type } = req.body;
         let checked = checked_inputs.split(',')
         console.log(req.body);
-        console.log(checked)
-        console.log(Array.isArray(checked))
         /*if (!req.files) {
             return res.status(400).send("No files were uploaded.");
         }*/
