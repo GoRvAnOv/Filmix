@@ -3,13 +3,77 @@
     
     <ul class="nav-list">
         <li id="films"><a href="films">ФІЛЬМИ</a>
-            <div hidden class="hidden-menu" id="hidden-menu"></div>
+            <div class="hidden-menu" id="hidden-menu" hidden> 
+                <ul class="hidden-list">
+                    <li><a href="/films">Всі фільми</a></li>
+                    <label>По року:</label>
+                    <li><a href="">2022</a></li>
+                    <li><a href="">2021</a></li>
+                    <li><a href="">2020</a></li>
+                    <label>По країнах:</label>
+                    <li><a href="">Американські</a></li>
+                    <li><a href="">Індійські</a></li>
+                    <li><a href="">Турецькі</a></li>
+                </ul>
+                <ul class="hidden-list">
+                    <label>По жанрах:</label>
+                    <li><a href="/biographical">Біографічні</a></li>
+                    <li><a href="/combats">Боєвики</a></li>
+                    <li><a href="/vestern">Вестерни</a></li>
+                    <li><a href="/detectives">Детективи</a></li>
+                    <li><a href="/for_kids">Дитячі</a></li>
+                    <li><a href="/documentary">Документальні</a></li>
+                    <li><a href="/dramas">Драми</a></li>
+                    <li><a href="/historical">Історичні</a></li>
+                </ul>
+                <ul class="hidden-list">
+                    <li><a href="/comedy">Комедії</a></li>
+                    <li><a href="/criminal">Кримінал</a></li>
+                    <li><a href="/melodramas">Мелодрами</a></li>
+                    <li><a href="/musical">Музичні</a></li>
+                    <li><a href="/advantures">Пригоди</a></li>
+                    <li><a href="/for_family">Сімейні</a></li>
+                    <li><a href="/sport">Спортивні</a></li>
+                    <li><a href="/horror">Жахи</a></li>
+                    <li><a href="/fantasy">Фантастика</a></li>
+                </ul>
+            </div>
         </li>
-        <li><a href="#">МУЛЬТФІЛЬМИ</a></li>
-        <li><a href="#">СЕРІАЛИ</a></li>
-        <li><a href="#">АНІМЕ</a></li>
+        <li><a href="cartoons">МУЛЬТФІЛЬМИ</a></li>
+        <li><a href="serials">СЕРІАЛИ</a></li>
+        <li><a href="anime">АНІМЕ</a></li>
     </ul>
     <input class="input-search" type="search" placeholder="Введіть назву">
     <button class="search">Пошук</button>
-    <button class="sign-in">Ввійти</button>
+    <a href="" class="sign-in">Ввійти</a>
 </nav>
+<div class="login-overlay"></div>
+
+<div class="login-form">
+    <form class="form" action="/api/auth" method="POST" enctype="multipart/form-data">
+        <div class="item-login-form">
+            <div>Авторизація</div>
+        </div>
+        <div class="item-login-form">
+            <input type="text" name="Username" placeholder="Ваш логін" value="igor">
+        </div>
+        <div class="item-login-form">
+            <input type="text" name="Password" placeholder="Ваш пароль" value="ivanov">
+        </div>
+        
+        <div class="item-login-form">
+            <label for="remember-me">Запам'ятати мене</label>
+            <input type="checkbox" id="remember-me" id="">
+        </div>
+        <div class="item-login-form">
+            <input type="submit" class="sign-in_login-form" value="Ввійти"></input>
+        </div>
+        <div id="item-login-form">
+            <a href="">Реєстрація</a>
+            <a href="">Відновити пароль</a>
+        </div>
+    </form>
+    
+
+</div>
+

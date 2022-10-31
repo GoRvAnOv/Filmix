@@ -1,4 +1,4 @@
-var deflete = document.getElementById('delete');
+/*var deflete = document.getElementById('delete');
 deflete.addEventListener('click', () =>{
     fetch('/', {
     method: 'POST', // Method itself
@@ -9,7 +9,7 @@ deflete.addEventListener('click', () =>{
 })
 .then(res => res.json()) // or res.json()
 .then(res => console.log(res))
-})
+})*/
 
 
 var films_hover = document.getElementById('films');
@@ -22,5 +22,10 @@ films_hover.addEventListener("mouseover", ()=>{
 films_hover.addEventListener("mouseout", ()=>{
     var a = document.getElementById('hidden-menu');
     a.setAttribute('hidden', "");
+    
+})
+
+let login_button = document.getElementById('sign-in_login-form');
+login_button.addEventListener('click', () =>{
     
 })

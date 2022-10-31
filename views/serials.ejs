@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+
+    <title>Films</title>
+</head>
+<body>
+    <header class="header">
+        <%- include('partials/header.ejs') %> 
+    </header>
+    <div class="movies">    
+        <% let filteredSerials = films.filter(item => item.type == 'Serial').slice(0,24) %> 
+        <% filteredSerials.forEach((item) =>{ %> 
+            <a href="/<%= item._id %>">
+                  <div class="item">
+                      <img src='<%= item.urlFoto %> ' alt="нема" style="width: 170px; height: 250px;">
+                      <h3 class="title"><%= item.name %> (<%= item.year %>) </h3>
+                  </div>
+              </a>
+            <% }) %> 
+        </div>
+    <script>
+
+    </script>
+</body>
+</html>

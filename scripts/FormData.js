@@ -8,6 +8,9 @@ let form = document.querySelector('form');
                 mass.push(inputs[i].value);
             }  
         }
+
+
+
         console.table(mass)
         async function sendData(item) {
         const data = new FormData(form)
@@ -22,9 +25,12 @@ let form = document.querySelector('form');
     sendData(mass);
     })
 
-let add = document.querySelector('#add')
+let add = document.querySelector('#add');
 add.addEventListener('click', ()=>{
-   let addinput = document.createElement('input')
+   let addinput = document.createElement('input');
    addinput.className = 'item';
-   document.getElementById('add').after(addinput);
+   addinput.id = 'country';
+   addinput.type = 'text';
+   addinput.name = 'country';
+   document.getElementById('country').after(addinput);
 })

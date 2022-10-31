@@ -11,106 +11,106 @@
     <div class="container">
         <div class="form">
             <form  action="/admin-panel" id = "form" method="POST" enctype="multipart/form-data">
-            <label class="item" for="name">Назва</label>
-            <input  class="item" type="text" name="name" value="Superman">
+            <label  class="item" for="name">Назва</label>
+            <input  class="item" id="name" type="text" name="name" value="Superman">
             <label  class="item" for="year">Рік</label>
-            <input  class="item" type="number" name= "year" value="2010">
+            <input  class="item" id="year" type="number" name= "year" value="2010">
             <label  class="item" for="director">Режисер</label>
-            <input  class="item" type="text" name="director" value="Zak Snider">
+            <input  class="item" id="director" type="text" name="director" value="Zak Snider">
             <label  class="item" for="country">Країна</label>
-            <input  class="item" id="some" type="text" name="country" value="Ukraine">
+            <input  class="item" id="country" type="text" name="country" value="Ukraine">
             <button id="add">+++++</button>
             <label  class="item" for="actors">Актори</label>
-            <input  class="item" type="text" name="actors" value="Jason Statham">
+            <input  class="item" id="actors" type="text" name="actors" value="Jason Statham">
             <label  class="item" for="genre">Жанр</label>
             <div class="genres" id = "genres">
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="biographical" value="biographical">
+                    <input type="checkbox" id="biographical" name="biographical" value="biographical">
                     <label for="biographical">Біографічні</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="combats" value="combats">
+                    <input type="checkbox" id="combats" name="combats" value="combats">
                     <label for="combats">Боєвики</label>
                 </div><div>
-                    <input type="checkbox" id="genre_of_film" name="vestern" value="vestern">
+                    <input type="checkbox" id="vestern" name="vestern" value="vestern">
                     <label for="vestern">Вестерни</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="detectives" value="detectives">
+                    <input type="checkbox" id="detectives" name="detectives" value="detectives">
                     <label for="detectives">Детективи</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="for_kids" value="for_kids">
+                    <input type="checkbox" id="for_kids" name="for_kids" value="for_kids">
                     <label for="for_kids">Дитячі</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="documentary" value="documentary">
+                    <input type="checkbox" id="documentary" name="documentary" value="documentary">
                     <label for="documentary">Документальні</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="dramas" value="dramas">
+                    <input type="checkbox" id="dramas" name="dramas" value="dramas">
                     <label for="dramas">Драми</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="historical" value="historical">
+                    <input type="checkbox" id="historical" name="historical" value="historical">
                     <label for="historical">Історичні</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="comedy" value="comedy">
+                    <input type="checkbox" id="comedy" name="comedy" value="comedy">
                     <label for="comedy">Комедії</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="criminal" value="criminal">
+                    <input type="checkbox" id="criminal" name="criminal" value="criminal">
                     <label for="criminal">Кримінал</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="melodramas" value="melodramas">
+                    <input type="checkbox" id="melodramas" name="melodramas" value="melodramas">
                     <label for="melodramas" >Мелодрами</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="musical" value="musical">
+                    <input type="checkbox" id="musical" name="musical" value="musical">
                     <label for="musical">Музичні</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="advantures" value="advantures">
+                    <input type="checkbox" id="advantures" name="advantures" value="advantures">
                     <label for="advantures">Пригоди</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="for_family" value="for_family">
+                    <input type="checkbox" id="for_family" name="for_family" value="for_family">
                     <label for="for_family">Сімейні</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="sport" value="sport">
+                    <input type="checkbox" id="sport" name="sport" value="sport">
                     <label for="sport">Спортивні</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="horror" value="horror">
+                    <input type="checkbox" id="horror" name="horror" value="horror">
                     <label for="horror">Жахи</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="genre_of_film" name="fantasy" value="fantasy">
+                    <input type="checkbox" id="fantasy" name="fantasy" value="fantasy">
                     <label for="fantasy">Фантастика</label>
                 </div>
                 
             </div>
             <!--<input  class="item" type="text" name="genre" value="Fantasy">-->
             <label  class="item" for="quality">Якість</label>
-            <input  class="item" type="text" name="quality" value="1000">
+            <input  class="item" id="quality" type="text" name="quality" value="1000">
             <label  class="item" for="voice">Озвучка</label>
-            <input  class="item" type="text" name="voice" value="Coldfilm">
+            <input  class="item" id="voice" type="text" name="voice" value="Coldfilm">
             <label  class="item" for="type">Тип</label>
-            <select class="item" name = "type">
+            <select class="item" id="type" name = "type">
                 <option value="Film">Film</option>
                 <option value="Serial">Serial</option>
                 <option value="Cartoon">Cartoon</option>
                 <option value="Anime">Anime</option>
             </select>
             <label  class="item" for="description">Опис</label>
-            <input  class="item" type="text" name="description" value="qwert qwerty" >
+            <input  class="item" id="description" type="text" name="description" value="qwert qwerty" >
             <label  class="item" for="video">Відео</label>
-            <input  class="item" type="file" name= "video">
+            <input  class="item" id="video" type="file" name= "video">
             <label  class="item" for="foto">Постер</label>
-            <input  class="item" type="file" name="foto">
+            <input  class="item" id="foto" type="file" name="foto">
             <input  class="item" type="submit">
             
         </form>

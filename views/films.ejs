@@ -13,14 +13,15 @@
         <%- include('partials/header.ejs') %> 
     </header>
     <div class="movies">    
-        <%films.forEach((item) =>{ %>
-            <a href="films/<%= item._id %>">
-                <div class="item">
-                    <img src='<%= item.urlFoto %> ' alt="нема" style="width: 170px; height: 250px;">
-                    <h3 class="title"><%= item.name %> (<%= item.year %>) </h3>
-                </div>
-            </a>
-        <%})%>
+        <% let filteredFilms = films.filter(item => item.type == 'Film').slice(0,24) %> 
+              <% filteredFilms.forEach((item) =>{ %> 
+                  <a href="films/<%= item._id %>">
+                        <div class="item">
+                            <img src='<%= item.urlFoto %> ' alt="нема" style="width: 170px; height: 250px;">
+                            <h3 class="title"><%= item.name %> (<%= item.year %>) </h3>
+                        </div>
+                    </a>
+                  <% }) %> 
         </div>
     <script>
 

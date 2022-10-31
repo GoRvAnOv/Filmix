@@ -1,10 +1,9 @@
 const express = require('express');
 const FILM = require('../models/FILM');
 const Film = require('../models/FILM');
+const User = require('../models/Users')
 const path = require('path');
 const router = express.Router();
-const axios = require('axios').default;
-
 //const createPath = (page) => path.resolve(__dirname, './views', `${page}.ejs`);
 
 router.get("/", (req, res) => {
@@ -12,18 +11,28 @@ router.get("/", (req, res) => {
     if (sort) {
       FILM.find()
         .sort({ rating: 1 })
-        .limit(6)
+        //.limit(6)
         .then((films) => res.render("index.ejs", { films }));
     } else {
       FILM.find()
-        .limit(6)
+        //.limit(6)
         .then((films) => res.render("index.ejs", { films }));
     }
    // res.sendFile(path.join(__dirname, '..', '/views/scrt.js'));
   });
+
+  
+  router.post("/api/auth", (req, res) =>{
+   
+    const {Username, Password} = req.body;
+    console.log(req.body);
+    const user = new User({Username, Password})
+        user.save();
+  })
 //sending scripts
 router.get('/scripts/:id', (req, res) =>{
-    res.sendFile(path.join(__dirname, '..', `/scripts/FormData.js`))
+    const id = req.params.id;
+    res.sendFile(path.join(__dirname, '..', `/scripts/${id}`))
 })
 // sending images
 router.get('/files/posters/:id', (req, res) =>{
@@ -54,22 +63,12 @@ router.get('/films/:id', (req, res) =>{
         .then(item => res.render('template.ejs', {item}));   
         })
 
+
 router.post('/films/:id', (req, res) =>{
     const {username, comments} = req.body;
     const id = req.params['id'];
     const dateAdded = new Date();
     console.log(req.body);
-    /*FILM.updateOne({_id:`${id}`},{
-        $push:{
-            comment: `${comment}`
-        }
-    })*/
-    /*FILM.updateOne({name:"Boom"},{
-        $addToSet:{
-            comments: `${comment}`
-        }
-
-    })*/
     FILM
         .findByIdAndUpdate(id, {$push:{comments: {username: username, comment:comments, dateAdded:dateAdded}}})
         .then((result) => res.status(200));
@@ -86,10 +85,28 @@ router.delete('/films/:id', (req, res) =>{
     })
 
 })
+router.get('/serials', (req, res) =>{
+    FILM
+    .find()
+    .then(films => res.render('serials.ejs', {films}))
+})
 //.findByIdAndUpdate(id, {$push:{comments: `${comments}`}})
 router.get('/admin-panel', (req, res) => {
     res.render('admin-panel.ejs');
 })
+
+router.get('/:id', (req, res) =>{
+    const id = req.params['id'];
+    try{
+        FILM
+        .findById(id)
+        .then(item => res.render('template.ejs', {item}));   
+        }
+    catch(err){
+        res.send(err)
+    }
+    })
+
 router.post('/admin-panel', (req, res) => {
     try{
         const { name, year, director, country, actors, checked_inputs, quality, voice, description, type } = req.body;
